@@ -23,7 +23,7 @@ namespace DynDNS_API
             //Check for, and create, config file.
             if (!(File.Exists(".//Config.xml")))
             {
-                File.WriteAllText(@".\Config.xml", Properties.Resources.Config);
+                File.AppendAllText(@".\Config.xml", Properties.Resources.Config);
                 logging.WriteToLog("No XML file detected.  One has been created for you in the same directory as the program.  Please configure the XML file before running this program again");
                 Console.ReadLine();
                 return;
