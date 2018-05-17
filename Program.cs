@@ -13,13 +13,18 @@ namespace DynDNS_API
     {
         private const string IPURL = "http://checkip.dyndns.org";
 
+
+
         static void Main(string[] args)
         {
+            //Create logging object
+            Logging logging = new Logging();
+            
             //Check for, and create, config file.
             if (!(File.Exists(".//Config.xml")))
             {
                 File.WriteAllText(@".\Config.xml", Properties.Resources.Config);
-                Console.WriteLine("No XML file detected.  One has been created for you in the same directory as the program.  Please configure the XML file before running this program again.");
+                logging.WriteToLog("No XML file detected.  One has been created for you in the same directory as the program.  Please configure the XML file before running this program again");
                 Console.ReadLine();
                 return;
             }
@@ -72,7 +77,7 @@ namespace DynDNS_API
                                         break;
 
                                     default:
-                                        Console.WriteLine("XML Document Format Is Invalid.");
+                                        logging.WriteToLog("XML Document Format Is Invalid.");
                                         return;
                                 }
                             }
@@ -133,41 +138,41 @@ namespace DynDNS_API
                 switch (response)
                 {
                     case "good":
-                        Console.WriteLine("SUCCESS: Updated the IP address.");
+                        logging.WriteToLog("SUCCESS: Updated the IP address.");
                         break;
 
                     case "nochg":
-                        Console.WriteLine("SUCCESS: No change was needed.");
+                        logging.WriteToLog("SUCCESS: No change was needed.");
                         break;
 
                     case "nohost":
-                        Console.WriteLine("ERROR: Hostname does not exist or Dynamic DNS is not enable in DNS setting.");
+                        logging.WriteToLog("ERROR: Hostname does not exist or Dynamic DNS is not enable in DNS setting.");
                         break;
 
                     case "badauth":
-                        Console.WriteLine("ERROR: Username:Password combo is incorrect.  Check setting in Google DNS console.");
+                        logging.WriteToLog("ERROR: Username:Password combo is incorrect.  Check setting in Google DNS console.");
                         break;
 
                     case "notfqdn":
-                        Console.WriteLine("ERROR: Hostname is not fully-qualified.  Check DNSURL and Hostname for typos.");
+                        logging.WriteToLog("ERROR: Hostname is not fully-qualified.  Check DNSURL and Hostname for typos.");
                         break;
 
                     case "badagent":
-                        Console.WriteLine("ERROR: Bad request. Only IPv4 addresses can be set, check User Agent Header");
+                        logging.WriteToLog("ERROR: Bad request. Only IPv4 addresses can be set, check User Agent Header");
                         break;
 
                     case "abuse":
-                        Console.WriteLine("ERROR: Dynamic DNS has been disable for current hostname due to previous failed requests.");
+                        logging.WriteToLog("ERROR: Dynamic DNS has been disable for current hostname due to previous failed requests.");
                         break;
 
                     case "911":
                         // google error, wait 10 minutes for retry
-                        Console.WriteLine("ERROR: Google error 911. Wait 5 minutes before trying again");
+                        logging.WriteToLog("ERROR: Google error 911. Wait 5 minutes before trying again");
                         break;
 
                     default:
                         // some other issue
-                        Console.WriteLine("Other failure not due to POST response.");
+                        logging.WriteToLog("Other failure not due to POST response.");
                         break;
                 }
             }
