@@ -172,7 +172,7 @@ namespace DynDNS_API
                 }
             }
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
