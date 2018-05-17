@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--Allows for multiple URLs to be updated at a time.-->
+
+<HostList>
+  
+  <!--IP Address can be left blank, if it is the program will check current
+      public facing IP via a web scrape.-->
+  <Host>
+    <IPAddress></IPAddress>
+    <Hostname>url.com</Hostname>
+    <UserName>Google Generated Dynamic DNS User Name</UserName>
+    <Password>Google Generated Dynamic DNS Password</Password>
+  </Host>
+
+  <!--IP Address can also be specificed if the host resides outside of this
+      environment.-->
+  <Host>
+    <IPAddress>0.0.0.0</IPAddress>
+    <Hostname>url.com</Hostname>
+    <UserName>Google Generated Dynamic DNS User Name</UserName>
+    <Password>Google Generated Dynamic DNS Password</Password>
+  </Host>
+  
+</HostList>

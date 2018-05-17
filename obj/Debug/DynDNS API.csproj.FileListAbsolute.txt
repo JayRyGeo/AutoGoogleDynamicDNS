@@ -1,0 +1,9 @@
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS API.csprojAssemblyReference.cache
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS API.csproj.CoreCompileInputs.cache
+C:\Users\227790\Documents\DynDNS API\DynDNS API\bin\Debug\DynDNS API.exe.config
+C:\Users\227790\Documents\DynDNS API\DynDNS API\bin\Debug\DynDNS API.exe
+C:\Users\227790\Documents\DynDNS API\DynDNS API\bin\Debug\DynDNS API.pdb
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS API.exe
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS API.pdb
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS_API.Properties.Resources.resources
+C:\Users\227790\Documents\DynDNS API\DynDNS API\obj\Debug\DynDNS API.csproj.GenerateResource.cache
