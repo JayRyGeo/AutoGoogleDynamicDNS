@@ -17,7 +17,7 @@ namespace DynDNS_API
         {
             DateTime timeStamp = DateTime.Now;
 
-            File.WriteAllText(".//api.log", timeStamp + " " + logText);
+            File.AppendAllText(".//api.log", timeStamp + " " + logText);
         }
     }
 }
