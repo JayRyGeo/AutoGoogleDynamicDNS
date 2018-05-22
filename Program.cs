@@ -134,15 +134,16 @@ namespace DynDNS_API
 
                 //Display status for each entry
                 Console.Write(current.Hostname + ": ");
+                logging.WriteToLog("Request Sent: " + request);
 
                 switch (response)
                 {
                     case "good":
-                        logging.WriteToLog("SUCCESS: Updated the IP address.");
+                        logging.WriteToLog("SUCCESS: Updated the IP address to " + current.IPAddress + ".");
                         break;
 
                     case "nochg":
-                        logging.WriteToLog("SUCCESS: No change was needed.");
+                        logging.WriteToLog("SUCCESS: No change was needed. Current IP is " + current.IPAddress);
                         break;
 
                     case "nohost":
