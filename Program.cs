@@ -106,7 +106,7 @@ namespace DynDNS_API
             foreach (DynDNS current in DNSLIST)
             {
                 //Build the initial URL with the username, password, and hostname (domain to be updated)
-                string DNSURL = string.Format("https://{0}:{1}@domains.google.com/nic/update?hostname={2}", current.UserName, current.Password, current.Hostname);
+                string DNSURL = string.Format("https://{0}:{1}@domains.google.com/nic/update?hostname={2}&myip={3}", current.UserName, current.Password, current.Hostname, current.IPAddress);
 
                 //Create new client object
                 HttpClient client = new HttpClient();
